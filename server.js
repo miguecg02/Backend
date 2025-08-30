@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const cors = require('cors');
 const personasRouter = require('./routes/PersonaEnMovilidad');
 const loginRoutes = require('./routes/Login');
