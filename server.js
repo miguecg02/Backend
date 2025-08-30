@@ -1,5 +1,4 @@
 const express = require('express');
-require('dotenv').config();
 const cors = require('cors');
 const personasRouter = require('./routes/PersonaEnMovilidad');
 const loginRoutes = require('./routes/Login');
@@ -22,9 +21,9 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 // Rutas (después de todos los middlewares)
-app.use('/api/login', loginRoutes);
-app.use('/api/personas', personasRouter);
-app.use('/api/notificaciones', notificacionesRouter);
+app.use('/login', loginRoutes);
+app.use('/personas', personasRouter);
+app.use('/notificaciones', notificacionesRouter);
 
 
 app.get("/", (req, res) => {
