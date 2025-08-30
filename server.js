@@ -28,7 +28,7 @@ app.use('/api/notificaciones', notificacionesRouter);
 
 
 app.get("/", (req, res) => {
-  res.send("Backend funcionando 🚀");
+  res.send("Backend funcionando ");
 });
 
 // Manejo de errores
