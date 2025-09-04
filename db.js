@@ -12,6 +12,7 @@ const pool = mysql.createPool({
   queueLimit: 0,
 });
 
+
 pool.getConnection()
   .then(conn => {
     console.log(`✅ MySQL: conexión establecida con ${process.env.MYSQLHOST || 'localhost'}`);
