@@ -2,11 +2,11 @@
 const mysql = require('mysql2/promise');
 
 const pool = mysql.createPool({
-  host: process.env.MYSQLHOST,
-  port: process.env.MYSQLPORT,
-  user: process.env.MYSQLUSER,
-  password: process.env.MYSQLPASSWORD,
-  database: process.env.MYSQLDATABASE,
+  host: process.env.MYSQLHOST || process.env.DB_HOST || '127.0.0.1',
+  port: process.env.MYSQLPORT || process.env.DB_PORT || 3306,
+  user: process.env.MYSQLUSER || process.env.DB_USER || 'root',
+  password: process.env.MYSQLPASSWORD || process.env.DB_PASSWORD || '',
+  database: process.env.MYSQLDATABASE || process.env.DB_NAME || 'test',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
@@ -14,7 +14,7 @@ const pool = mysql.createPool({
 
 pool.getConnection()
   .then(conn => {
-    console.log(`✅ MySQL: conexión establecida con ${process.env.DB_HOST || 'localhost'}`);
+    console.log(`✅ MySQL: conexión establecida con ${process.env.MYSQLHOST || 'localhost'}`);
     conn.release();
   })
   .catch(err => {
