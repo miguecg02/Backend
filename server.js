@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://tu-dominio.netlify.app' // Reemplaza con tu URL de Netlify
+    'https://comfy-bombolone-9bb107.netlify.app' // URL real de Netlify
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
